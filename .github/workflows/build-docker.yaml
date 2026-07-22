@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-lates
     steps:
       - name: checkout
-        uses: actions:checkout@v4
+        uses: actions/checkout@v4
       - name: Build Image
         run: docker build ./api -t 2808/devops-qr-code-api:latest
       - name: push image todocker hub
