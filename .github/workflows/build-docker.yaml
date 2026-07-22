@@ -11,4 +11,5 @@ jobs:
         run: docker build ./api -t 2808/devops-qr-code-api:latest
       - name: push image todocker hub
         run: |
+          docker login -u 2808 -p ${{ secrets.GITHUB_TOKEN }}
           docker push 2808/devops-qr-code-api:latest
