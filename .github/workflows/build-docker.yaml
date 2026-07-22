@@ -3,13 +3,13 @@ on:
   [workflow_dispatch]
 jobs:
   publish-images:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v4
       - name: Build Image
         run: docker build ./api -t 2808/devops-qr-code-api:latest
-      - name: push image todocker hub
+      - name: push image to docker hub
         run: |
           docker login -u 2808 -p ${{ secrets.GITHUB_TOKEN }}
           docker push 2808/devops-qr-code-api:latest
