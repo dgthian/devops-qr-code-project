@@ -41,9 +41,13 @@ The goal is to get hands-on with DevOps practices like Containerization, CICD an
 
 Look at the capstone project for more detials.
 
-## Author
+## 👤 Author
 
-[Rishab Kumar](https://github.com/rishabkumar7)
+**Djibril Gueye Thiandoum**
+
+- LinkedIn: https://www.linkedin.com/in/djibril-gueye-thiandoum-7a319571/
+- GitHub: https://github.com/dgthian
+- Website: https://d18xxtbyevhmrf.cloudfront.net/
 
 ## License
 

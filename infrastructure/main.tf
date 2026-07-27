@@ -61,26 +61,6 @@ resource "aws_subnet" "subnet_2" {
 }
 
 
-resource "aws_subnet" "subnet_3" {
-
-  vpc_id = aws_vpc.main.id
-
-  cidr_block = "10.0.32.0/20"
-
-  availability_zone = "us-east-1d"
-
-  map_public_ip_on_launch = true
-
-  tags = {
-    Name = "eks-public-subnet-3"
-
-    "kubernetes.io/role/elb" = "1"
-
-    "kubernetes.io/cluster/devops-capstone-project" = "shared"
-  }
-}
-
-
 ########################################
 # Internet Gateway
 ########################################
@@ -143,15 +123,6 @@ resource "aws_route_table_association" "subnet_2" {
 }
 
 
-resource "aws_route_table_association" "subnet_3" {
-
-  subnet_id = aws_subnet.subnet_3.id
-
-  route_table_id = aws_route_table.public.id
-}
-
-
-
 ########################################
 # EKS Cluster
 ########################################
@@ -188,14 +159,12 @@ module "eks" {
 
   subnet_ids = [
     aws_subnet.subnet_1.id,
-    aws_subnet.subnet_2.id,
-    aws_subnet.subnet_3.id
+    aws_subnet.subnet_2.id 
   ]
 
   control_plane_subnet_ids = [
     aws_subnet.subnet_1.id,
-    aws_subnet.subnet_2.id,
-    aws_subnet.subnet_3.id
+    aws_subnet.subnet_2.id 
   ]
 
 
